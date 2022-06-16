@@ -10,7 +10,7 @@
 - Working with API using fetch
 - oAuth authorization using JWT token
 - Loading data with page scrolling (IntersectionObserver)
-— Git and GitHub
+- Git and GitHub
 
 
 
