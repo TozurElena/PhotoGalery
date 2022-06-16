@@ -1,3 +1,6 @@
 export const getData = () => {
-  console.log('Data');
+  return fetch('data.json')
+    .then((data) =>{
+      return data.json()
+    })
 }
