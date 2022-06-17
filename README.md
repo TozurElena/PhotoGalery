@@ -8,6 +8,8 @@
 ![JS](https://img.shields.io/badge/JS-JavaScript-blue?style=for-the-badge&logo=js&logoColor=white)
 
 - Working with API using fetch
+- [Masonry](https://masonry.desandro.com/)
+  Cascading grid layout library
 - oAuth authorization using JWT token
 - Loading data with page scrolling (IntersectionObserver)
 - Git and GitHub
