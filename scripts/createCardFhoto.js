@@ -1,5 +1,12 @@
 import { createElem } from "./creatElem.js";
 
+const loadImg = (url, description) => {
+  const photo = new Image();
+  photo.width = "200";
+  photo.src = data.urls.small;
+  photo.alt = data.alt_description;
+}
+
 export const createCardPhoto = (data) => {
   const card = createElem('li', {
     className: 'card'
@@ -10,11 +17,6 @@ export const createCardPhoto = (data) => {
     className:'grid-item',
     href:`page.html?photo=${data.id}`
   });
-  
-  const photo = new Image();
-  photo.width = "200";
-  photo.src = data.urls.small;
-  photo.alt = data.alt_description;
 
   const author = createElem('a', {
     className: 'card__author',

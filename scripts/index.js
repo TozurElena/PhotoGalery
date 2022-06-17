@@ -1,9 +1,10 @@
 import { getData } from "./getData.js";
 import { renderGalery } from "./renderGalery.js";
 
-const init = async () => {
+const init = async (selectorWrapper) => {
+  const wrapper = document.querySelector(selectorWrapper)
   const photos = await getData();
-  renderGalery(photos);
+  renderGalery(wrapper, photos);
 };
 
-init();
+init('.gallery__wrapper');
