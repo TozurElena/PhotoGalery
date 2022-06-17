@@ -1,11 +1,15 @@
 
 import { createCardPhoto } from "./createCardFhoto.js";
 import { createElem } from "./creatElem.js";
+import { scrollLoad } from "./scrollLoad.js";
 
 export const renderGalery = (wrapper, photos) => {
   const gallery = createElem('ul', {
     className: 'grid',
   });
+
+  const endElem = createElem('div');
+
   wrapper.append(gallery);
 
   // initialiser Masonry
@@ -16,8 +20,17 @@ export const renderGalery = (wrapper, photos) => {
     isFitWidth: true, //center
   })
   const cards = photos.map(createCardPhoto);
-  gallery.append(...cards);
-  grid.appended(cards);//creer setky de photos
+
+  Promise.all(cards)
+    .then(cards => {
+      gallery.append(...cards);
+      grid.appended(cards);//creer setky de photos
+      wrapper.append(endElem);
+      scrollLoad(gallery, grid,endElem);
+    })
+
+  
+  
   
   
 }
