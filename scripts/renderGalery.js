@@ -19,6 +19,7 @@ export const renderGalery = (wrapper, photos) => {
     columnWidth: 200,
     isFitWidth: true, //center
   })
+  // peredaem createCardPhoto comme callback function, a ne visivaem ee
   const cards = photos.map(createCardPhoto);
 
   Promise.all(cards)
