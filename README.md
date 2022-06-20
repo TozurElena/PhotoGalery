@@ -14,6 +14,8 @@
 - Loading data with page scrolling (IntersectionObserver)
 - Git and GitHub
 
+### Useful links:
+- [Unsplash - The internet’s source of freely-usable images.](https://unsplash.com/)
 
 
 ## Deployment
