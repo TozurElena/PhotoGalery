@@ -11,11 +11,17 @@ export const getData = ({page = 1, count, idPhoto}) => {
   }
 
   if (idPhoto) {
-    console.log(url);
     url.pathname += `/${idPhoto}`;
   }
-  return fetch(url)
-    .then((data) =>{
+
+  const headers = {};
+  // verifer qu'on est autorisé
+  if (localStorage.getItem('Bearer')) {
+    headers.Authorization = `Bearer ${localStorage.getItem('Bearer')}`;
+  }
+  return fetch(url, {
+    headers
+  }).then((data) =>{
       return data.json()
     })
 }
