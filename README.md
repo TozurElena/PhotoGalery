@@ -19,7 +19,7 @@
 - [Vercel](https://vercel.com/)
 
 
-## Deployment
+## Hosting
+https://photo-galery-xi.vercel.app/ 
 
-To deploy this project run
 
