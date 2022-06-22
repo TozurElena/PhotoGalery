@@ -39,7 +39,7 @@ const checkLogin = async () => {
   }
   return false;
 }
-
+// function pour autorisation
 const login = () => {
   const url = new URL(API_URL_AUTH);
 
@@ -52,13 +52,24 @@ const login = () => {
   location.href = url;
 }
 
+// function pour exit, deautorisation
+const logout = (e) => {
+  const btn = e.target;
+  if (confirm('Vous êtes sure?')) {
+    localStorage.removeItem('Bearer');
+    btn.textContent = '';
+    btn.style.backgroundImage = '';
+  }
+  
+}
+
 export const authorisation = async (btn) => {
   if (await checkLogin()) {
     // console.log('Autorisé');
     const dataUser = await getUserData();
     btn.textContent = dataUser.username;
     btn.style.backgroundImage = `url(${dataUser.profile_image.medium})`;
-
+    btn.addEventListener('click', logout);
   } else {
     console.log('Pas Autorisé');
     btn.addEventListener('click', login);
